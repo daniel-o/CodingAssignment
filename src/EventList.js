@@ -10,6 +10,7 @@ export class EventList extends PureComponent {
 				data={ this.props.events }
 				renderItem={ ({item}) => (<EventItem item={item} />) }
 				keyExtractor={ ( item, index ) => index.toString() }
+				onEndReached={event => this.props.nextPage()}
 			/>
 		)
 	}
