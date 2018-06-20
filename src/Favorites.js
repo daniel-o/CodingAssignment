@@ -17,4 +17,8 @@ export class Favorites {
 		this.favorites.splice( index, 1 );
 		return false;
 	}
+
+	includes( id ) {
+		return this.favorites.includes( id );
+	}
 }
