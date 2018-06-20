@@ -1,6 +1,6 @@
 import React from "react";
 import { PureComponent } from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
 import { Icon } from 'react-native-elements';
 
 export class Picture extends PureComponent {
