@@ -1,7 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { EventController } from "./src/EventController";
 
 export default class App extends React.Component {
+	constructor( props ) {
+		super( props );
+
+		this.state = { events: [] };
+
+		this.grabber = new EventController();
+		this.grabber.grabEvents().then( events => this.setState( { events } ) );
+	}
+
   render() {
     return (
       <View style={styles.container}>
