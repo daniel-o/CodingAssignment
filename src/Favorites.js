@@ -6,4 +6,9 @@ export class Favorites {
 	constructor() {
 		this.favorites = new Array();
 	}
+
+	add( id ) {
+		this.favorites.push( id );
+		return true;
+	}
 }
