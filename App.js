@@ -40,12 +40,26 @@ export default class App extends React.Component {
 		) );
 	}
 
+	toggleFavorite( id ) {
+		const toggle = ( event ) =>
+			event.favorite ? this.favorites.remove( id ) : this.favorites.add( id )
+
+		// Have to replace the entire events array to update a single elements property
+		// for the sake of immutability.
+		const updated = this.state.events.map( event =>
+			event.id !== id ? event : Object.assign( {}, event, { favorite: toggle( event ) } )
+		);
+
+		this.setState( { events: updated } );
+	}
+
   render() {
     return (
 			<Navigation
 				screenProps={{
 					events: this.state.events,
-					nextPage: () => this.grabNextEventPage()
+					nextPage: () => this.grabNextEventPage(),
+					toggleFavorite: ( id ) => this.toggleFavorite( id )
 				}}
 			/>
     );
