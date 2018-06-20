@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { EventController } from "./src/EventController";
+import { Favorites } from "./src/Favorites";
 
 export default class App extends React.Component {
 	constructor( props ) {
 		super( props );
 
 		this.state = { events: [] };
+
+		this.favorites = new Favorites();
 
 		this.grabber = new EventController();
 		this.grabber.grabEvents().then( events => this.setState( { events } ) );
