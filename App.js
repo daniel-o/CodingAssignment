@@ -12,7 +12,7 @@ export default class App extends React.Component {
 		this.favorites = new Favorites();
 
 		this.grabber = new EventController();
-		this.grabber.grabEvents().then( events => this.setState( { events: addEvents( events ) } ) );
+		this.grabber.grabEvents().then( events => this.setState( { events: this.addEvents( events ) } ) );
 	}
 
 	/**
