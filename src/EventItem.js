@@ -6,7 +6,7 @@ export class EventItem extends PureComponent {
 	render() {
 		return (
 			<TouchableOpacity>
-				<Text>{ this.props.title }</Text>
+				<Text>{ this.props.item.title }</Text>
 			</TouchableOpacity>
 		)
 	}
