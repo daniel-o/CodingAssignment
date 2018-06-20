@@ -12,7 +12,7 @@ export class EventList extends PureComponent {
 		return (
 			<FlatList
 				data={ this.list }
-				renderItem={ ({item}) => (<EventItem item={item} />) }
+				renderItem={ ({item}) => (<EventItem item={item} navigation={ this.props.navigation } />) }
 				keyExtractor={ ( item, index ) => index.toString() }
 				onEndReached={event => this.props.screenProps.nextPage()}
 			/>
