@@ -20,9 +20,23 @@ export class EventItem extends PureComponent {
 				style={{ flexDirection: "row" }}
 				onPress={ event => this.openDetails() }
 			>
+				{ this.props.item.favorite &&
+					<Icon
+						type="font-awesome"
+						name="heart"
+						color="red"
+						style={ styles.icon }
+					/> }
 				<Picture source={ this.imageURL } />
 				<EventSummary item={this.props.item} />
 			</TouchableOpacity>
 		)
 	}
 }
+
+const styles = StyleSheet.create( {
+	icon: {
+		position: "absolute",
+		left: 0
+	}
+} );
