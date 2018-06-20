@@ -1,7 +1,8 @@
 import React from "react";
 import { PureComponent } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { Picture } from "./Picture";
+import { EventSummary } from "./EventSummary";
 
 export class EventItem extends PureComponent {
 	get imageURL() {
@@ -13,7 +14,7 @@ export class EventItem extends PureComponent {
 		return (
 			<TouchableOpacity style={{ flexDirection: "row" }}>
 				<Picture source={ this.imageURL } />
-				<Text>{ this.props.item.title }</Text>
+				<EventSummary item={this.props.item} />
 			</TouchableOpacity>
 		)
 	}
