@@ -11,4 +11,10 @@ export class Favorites {
 		this.favorites.push( id );
 		return true;
 	}
+
+	remove( id ) {
+		const index = this.favorites.findIndex( eventid => eventid === id );
+		this.favorites.splice( index, 1 );
+		return false;
+	}
 }
