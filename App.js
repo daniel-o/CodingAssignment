@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { EventController } from "./src/EventController";
 import { Favorites } from "./src/Favorites";
-import { EventList } from "./src/EventList";
+import { Navigation } from "./src/Navigation";
 
 export default class App extends React.Component {
 	constructor( props ) {
@@ -42,7 +42,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-			<EventList events={ this.state.events } nextPage={ () => this.grabNextEventPage() } />
+			<Navigation
+				screenProps={{
+					events: this.state.events,
+					nextPage: () => this.grabNextEventPage()
+				}}
+			/>
     );
   }
 }
