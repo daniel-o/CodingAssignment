@@ -1,6 +1,7 @@
 import React from "react";
 import { PureComponent } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
+import { Icon } from 'react-native-elements';
 import { Picture } from "./Picture";
 import { EventSummary } from "./EventSummary";
 
