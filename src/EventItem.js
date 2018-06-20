@@ -11,7 +11,7 @@ export class EventItem extends PureComponent {
 
 	render() {
 		return (
-			<TouchableOpacity style={ flexDirection: "row" }>
+			<TouchableOpacity style={{ flexDirection: "row" }}>
 				<Picture source={ this.imageURL } />
 				<Text>{ this.props.item.title }</Text>
 			</TouchableOpacity>
