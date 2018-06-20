@@ -7,7 +7,7 @@ export class EventList extends PureComponent {
 	render() {
 		return (
 			<FlatList
-				data="this.prop.events"
+				data={ this.props.events }
 				renderItem={ ({item}) => (<EventItem item={item} />) }
 				keyExtractor={ ( item, index ) => index.toString() }
 			/>
