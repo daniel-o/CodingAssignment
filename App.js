@@ -42,7 +42,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-			<EventList events={ this.state.events } />
+			<EventList events={ this.state.events } nextPage={ () => this.grabNextEventPage() } />
     );
   }
 }
