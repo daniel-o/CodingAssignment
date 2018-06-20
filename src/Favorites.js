@@ -8,16 +8,22 @@ export class Favorites {
 		this.favorites = new Array();
 	}
 
+	load() {
+		return AsyncStorage.getItem( "favorites" ).then( favs =>
+			this.favorites = JSON.parse( favs ) || []
+		);
+	}
+
 	add( id ) {
 		this.favorites.push( id );
-		this.persist();
+		this.persistFavorites();
 		return true;
 	}
 
 	remove( id ) {
 		const index = this.favorites.findIndex( eventid => eventid === id );
 		this.favorites.splice( index, 1 );
-		this.persist();
+		this.persistFavorites();
 		return false;
 	}
 
@@ -25,7 +31,7 @@ export class Favorites {
 		return this.favorites.includes( id );
 	}
 
-	persist() {
+	persistFavorites() {
 		try {
 			AsyncStorage.setItem( "favorites", JSON.stringify( this.favorites ) );
 		} catch( error ) {
