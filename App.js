@@ -16,7 +16,10 @@ export default class App extends React.Component {
 		this.favorites = new Favorites();
 
 		this.grabber = new EventController();
-		this.grabNextEventPage();
+
+		this.favorites.load().then( results =>
+			this.grabNextEventPage()
+		);
 	}
 
 	/**
