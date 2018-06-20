@@ -10,9 +10,16 @@ export class EventItem extends PureComponent {
 		return main.image;
 	}
 
+	openDetails() {
+		this.props.navigation.navigate( "Details", { item: this.props.item } );
+	}
+
 	render() {
 		return (
-			<TouchableOpacity style={{ flexDirection: "row" }}>
+			<TouchableOpacity
+				style={{ flexDirection: "row" }}
+				onPress={ event => this.openDetails() }
+			>
 				<Picture source={ this.imageURL } />
 				<EventSummary item={this.props.item} />
 			</TouchableOpacity>
